@@ -28,22 +28,30 @@ class HomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 55, bottom: 22),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                padding: const EdgeInsets.only(left: 16, top: 55, bottom: 22),
+                child: Row(
                   children: [
-                    Text('Online',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 36.0,
-                          color: Colors.white,
-                        )),
-                    Text('Master Class',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 36.0,
-                          color: Colors.white,
-                        ))
+                    SizedBox(
+                        width: 85,
+                        height: 85,
+                        child: Image.asset('images/masterclass-logo.png')),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Online',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 36.0,
+                              color: Colors.white,
+                            )),
+                        Text('Master Class',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 36.0,
+                              color: Colors.white,
+                            ))
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -478,17 +486,16 @@ class HomePage extends StatelessWidget {
                         dynamic imgBackground;
                         dynamic img;
                         double leftPos, bottomPos;
-                        int coloredStars = 4;
-
-                        List<Widget> starIcons = List.generate(5, (index) {
-                          return Icon(Icons.star,
-                              color: index < coloredStars
-                                  ? Colors.amber
-                                  : Color(0xFF29274f));
-                        });
+                        List<Widget> starIcons;
 
                         switch (index) {
                           case 1:
+                            starIcons = List.generate(5, (index) {
+                              return Icon(Icons.star,
+                                  color: index < 4
+                                      ? Colors.amber
+                                      : Color(0xFF29274f));
+                            });
                             courseDetails = Padding(
                               padding:
                                   const EdgeInsets.only(left: 151, bottom: 8),
@@ -512,8 +519,25 @@ class HomePage extends StatelessWidget {
                                       color: const Color(0xFF8C8C8C),
                                     ),
                                   ),
-                                  Wrap(
-                                    children: starIcons,
+                                  Row(
+                                    children: [
+                                      Wrap(
+                                        children: starIcons,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 16),
+                                        child: Text(
+                                          '(4.0)',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14.0,
+                                            color: const Color.fromARGB(
+                                                255, 192, 192, 192),
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   )
                                 ],
                               ),
@@ -537,6 +561,12 @@ class HomePage extends StatelessWidget {
                             );
 
                           case 2:
+                            starIcons = List.generate(5, (index) {
+                              return Icon(Icons.star,
+                                  color: index < 3
+                                      ? Colors.amber
+                                      : Color(0xFF29274f));
+                            });
                             courseDetails = Padding(
                               padding:
                                   const EdgeInsets.only(left: 151, bottom: 8),
@@ -560,8 +590,25 @@ class HomePage extends StatelessWidget {
                                       color: const Color(0xFF8C8C8C),
                                     ),
                                   ),
-                                  Wrap(
-                                    children: starIcons,
+                                  Row(
+                                    children: [
+                                      Wrap(
+                                        children: starIcons,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 16),
+                                        child: Text(
+                                          '(3.0)',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14.0,
+                                            color: const Color.fromARGB(
+                                                255, 192, 192, 192),
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   )
                                 ],
                               ),
@@ -572,20 +619,164 @@ class HomePage extends StatelessWidget {
                               width: 117,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: const Color(0xFFFFB4B4),
+                                color: const Color(0xFFFFDEA2),
                               ),
                             );
 
-                            leftPos = 48;
-                            bottomPos = 19;
+                            leftPos = 50;
+                            bottomPos = 16;
                             img = Image.asset(
-                              'images/Saly-24.png',
+                              'images/Saly-12.png',
                               height: 115,
                               width: 115,
                             );
                           case 3:
+                            starIcons = List.generate(5, (index) {
+                              return Icon(Icons.star,
+                                  color: index < 3
+                                      ? Colors.amber
+                                      : Color(0xFF29274f));
+                            });
+                            courseDetails = Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 151, bottom: 8),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Database Admin',
+                                    style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    '3 Hours',
+                                    style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12.0,
+                                      color: const Color(0xFF8C8C8C),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Wrap(
+                                        children: starIcons,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 16),
+                                        child: Text(
+                                          '(3.0)',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14.0,
+                                            color: const Color.fromARGB(
+                                                255, 192, 192, 192),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            );
+
+                            imgBackground = Container(
+                              height: 84,
+                              width: 117,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color(0xFFFFCBC2),
+                              ),
+                            );
+
+                            leftPos = 50;
+                            bottomPos = 8;
+                            img = Image.asset(
+                              'images/Saly-16.png',
+                              height: 115,
+                              width: 115,
+                            );
                           case 4:
+                            starIcons = List.generate(5, (index) {
+                              return Icon(Icons.star,
+                                  color: index < 4
+                                      ? Colors.amber
+                                      : Color(0xFF29274f));
+                            });
+                            courseDetails = Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 151, bottom: 8),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Networking',
+                                    style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    '3 Hours',
+                                    style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12.0,
+                                      color: const Color(0xFF8C8C8C),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Wrap(
+                                        children: starIcons,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 16),
+                                        child: Text(
+                                          '(4.0)',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14.0,
+                                            color: const Color.fromARGB(
+                                                255, 192, 192, 192),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            );
+
+                            imgBackground = Container(
+                              height: 84,
+                              width: 117,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: const Color(0xFFA4D2FF),
+                              ),
+                            );
+
+                            leftPos = 52;
+                            bottomPos = 16;
+                            img = Image.asset(
+                              'images/Saly-11.png',
+                              height: 115,
+                              width: 115,
+                            );
                           default:
+                            starIcons = List.generate(5, (index) {
+                              return Icon(Icons.star,
+                                  color: index < 5
+                                      ? Colors.amber
+                                      : Color(0xFF29274f));
+                            });
                             courseDetails = Padding(
                               padding:
                                   const EdgeInsets.only(left: 151, bottom: 8),
@@ -602,15 +793,32 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    '8 Hours',
+                                    ' Hours',
                                     style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w400,
                                       fontSize: 12.0,
                                       color: const Color(0xFF8C8C8C),
                                     ),
                                   ),
-                                  Wrap(
-                                    children: starIcons,
+                                  Row(
+                                    children: [
+                                      Wrap(
+                                        children: starIcons,
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 16),
+                                        child: Text(
+                                          '(5.0)',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 14.0,
+                                            color: const Color.fromARGB(
+                                                255, 192, 192, 192),
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   )
                                 ],
                               ),

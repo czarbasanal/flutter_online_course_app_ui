@@ -6,7 +6,7 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int coloredStars = 4;
+    int coloredStars = 5;
     List<Widget> starIcons = List.generate(5, (index) {
       return Icon(Icons.star,
           color: index < coloredStars
@@ -79,7 +79,22 @@ class DetailsPage extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 11),
-                      child: Wrap(children: starIcons),
+                      child: Row(
+                        children: [
+                          Wrap(children: starIcons),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 16),
+                            child: Text(
+                              '(5.0)',
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14.0,
+                                color: const Color.fromARGB(255, 192, 192, 192),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                     Text(
                       'Graphic Design Master',
